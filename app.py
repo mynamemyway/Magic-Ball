@@ -1,7 +1,7 @@
 from flask import Flask, request, render_template
 from random import choice
 
-MB_PREFIX = 'Magic Ball 🎱:'
+MB_PREFIX = 'Magic Ball 🎱'
 
 def is_answer():
     positive_phrases = ['Бесспорно', 'Предрешено', 'Никаких сомнений', 'Определённо да', 'Можешь быть уверен в этом']
