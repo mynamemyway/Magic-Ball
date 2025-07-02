@@ -1,0 +1,90 @@
+<!DOCTYPE html>
+<html lang="ru">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Магический Шар 🎱</title>
+    <style>
+        body {
+            font-family: sans-serif;
+            margin: 40px;
+            background-color: #f0f0f0;
+            color: #333;
+        }
+
+        h1 {
+            color: #5a2c8a;
+        }
+
+        form {
+            background-color: #fff;
+            padding: 20px;
+            border-radius: 8px;
+            box-shadow: 0 2px 10px rgba(0, 0, 0, 0.1);
+            max-width: 500px;
+            margin-top: 20px;
+        }
+
+        input[type="text"] {
+            width: calc(100% - 20px);
+            padding: 10px;
+            margin-bottom: 15px;
+            border: 1px solid #ddd;
+            border-radius: 4px;
+        }
+
+        button {
+            background-color: #5a2c8a;
+            color: white;
+            padding: 10px 20px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            font-size: 16px;
+        }
+
+        button:hover {
+            background-color: #7b4eb2;
+        }
+
+        .output {
+            margin-top: 25px;
+            padding: 15px;
+            border: 1px dashed #5a2c8a;
+            border-radius: 8px;
+            background-color: #e6e6fa;
+        }
+
+        .question-text {
+            font-style: italic;
+            color: #666;
+        }
+
+        .answer-text {
+            font-weight: bold;
+            color: #5a2c8a;
+            font-size: 1.1em;
+        }
+    </style>
+</head>
+
+<body>
+    <h1>{{ prefix }} ask me</h1>
+
+    <form action="/ask" method="post">
+        <label for="question">Ваш вопрос:</label><br>
+        <input type="text" id="question" name="question" placeholder="Задайте свой вопрос" size="50" required><br><br>
+        <button type="submit">Спросить Шар</button>
+    </form>
+
+    {% if question %}
+    <p class="question-text">Ваш вопрос: {{ question }}</p>
+    {% endif %}
+
+    {% if answer %}
+    <p class="answer-text">{{ answer }}</p>
+    {% endif %}
+</body>
+
+</html>
