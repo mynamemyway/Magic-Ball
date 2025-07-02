@@ -57,10 +57,11 @@
         }
 
         .question-text {
-            font-style: italic;
+            font-style: normal;
             color: #666;
         }
 
+        /* Изменено с 'italic' на 'normal' */
         .answer-text {
             font-weight: bold;
             color: #5a2c8a;
@@ -70,10 +71,8 @@
 </head>
 
 <body>
-    <h1>{{ prefix }} ask me</h1>
-
+    <h1>{{ prefix }}</h1>
     <form action="/ask" method="post">
-        <label for="question">Ваш вопрос:</label><br>
         <input type="text" id="question" name="question" placeholder="Задайте свой вопрос" size="50" required><br><br>
         <button type="submit">Спросить Шар</button>
     </form>
