@@ -15,8 +15,19 @@
 
         h1 {
             color: #5a2c8a;
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
         }
 
+        /* Изменено для выравнивания */
+        .author-name {
+            font-size: 0.6em;
+            color: #666;
+            margin-left: 20px;
+        }
+
+        /* Добавлен новый класс для имени */
         form {
             background-color: #fff;
             padding: 20px;
@@ -61,7 +72,6 @@
             color: #666;
         }
 
-        /* Изменено с 'italic' на 'normal' */
         .answer-text {
             font-weight: bold;
             color: #5a2c8a;
@@ -71,7 +81,11 @@
 </head>
 
 <body>
-    <h1>{{ prefix }}</h1>
+    <h1>
+        {{ prefix }}
+        <span class="author-name">by mynamemyway</span> {# Добавлена строка с именем #}
+    </h1>
+
     <form action="/ask" method="post">
         <input type="text" id="question" name="question" placeholder="Задайте свой вопрос" size="50" required><br><br>
         <button type="submit">Спросить Шар</button>
